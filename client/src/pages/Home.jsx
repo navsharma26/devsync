@@ -234,35 +234,68 @@ function solution() {
 
         {/* Hero Section */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-xs font-semibold text-indigo-300 mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-400" />
+            <span>Technical Mock Interview & Live Collaboration Engine</span>
+          </div>
+
           <h1 className="text-4xl sm:text-6xl font-extrabold font-['Outfit'] tracking-tight text-white leading-tight">
-            Synchronize Developer Workflows in{' '}
+            Conduct Real-Time{' '}
             <span className="bg-gradient-to-r from-indigo-400 via-indigo-300 to-cyan-400 bg-clip-text text-transparent">
-              Realtime
+              Technical Interviews
             </span>
           </h1>
 
           <p className="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl mx-auto">
-            Instant 24-hour persistent coding workspaces with curated problem presets, live code
-            state, and full duplex Socket.io sync.
+            1-on-1 WebRTC video calling, custom problem authoring, Monaco editor sync, hidden test verification, anti-cheat detection, and automated PDF scorecard.
           </p>
+
+          {/* Quick Feature Badges */}
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-2 text-xs text-slate-300">
+            <span className="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center space-x-1.5">
+              <span>📹</span>
+              <span>1-on-1 Video & Audio</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center space-x-1.5">
+              <span>✍️</span>
+              <span>Custom Challenges</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center space-x-1.5">
+              <span>🧪</span>
+              <span>Hidden Test Engine</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center space-x-1.5">
+              <span>🛡️</span>
+              <span>Anti-Cheat Burst Guard</span>
+            </span>
+            <span className="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center space-x-1.5">
+              <span>📑</span>
+              <span>PDF Scorecard</span>
+            </span>
+          </div>
         </div>
 
         {/* Core Room Management Dashboard Card */}
-        <div className="max-w-4xl mx-auto glass-card rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl relative overflow-hidden">
+        <div id="interview-card" className="max-w-4xl mx-auto glass-card rounded-3xl border border-slate-800 p-6 sm:p-8 shadow-2xl relative overflow-hidden">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 divide-y md:divide-y-0 md:divide-x divide-slate-800">
-            {/* Left: Instant Create Room */}
+            {/* Left: Host Mock Interview */}
             <div className="space-y-5 pb-6 md:pb-0 md:pr-4">
               <div className="space-y-1">
-                <div className="flex items-center space-x-2">
-                  <div className="w-8 h-8 rounded-lg bg-indigo-600/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
-                    <Plus className="w-4 h-4" />
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 rounded-lg bg-indigo-600/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400">
+                      <Sparkles className="w-4 h-4" />
+                    </div>
+                    <h2 className="text-lg font-bold font-['Outfit'] text-white">
+                      Host Mock Interview
+                    </h2>
                   </div>
-                  <h2 className="text-lg font-bold font-['Outfit'] text-white">
-                    Instant Create Room
-                  </h2>
+                  <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/30">
+                    Host Mode
+                  </span>
                 </div>
                 <p className="text-xs text-slate-400">
-                  Spin up a 24h interview workspace with a coding problem preset.
+                  Author a custom coding problem or select a template with video & evaluation suite.
                 </p>
               </div>
 
@@ -408,7 +441,7 @@ function solution() {
                   ) : (
                     <>
                       <Sparkles className="w-4 h-4 text-indigo-200" />
-                      <span>Create 24h Workspace</span>
+                      <span>Launch Interview Session</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
@@ -416,7 +449,7 @@ function solution() {
               </form>
             </div>
 
-            {/* Right: Join with Room ID */}
+            {/* Right: Join Interview as Candidate / Peer */}
             <div className="space-y-5 pt-6 md:pt-0 md:pl-8 flex flex-col justify-between">
               <div className="space-y-1">
                 <div className="flex items-center space-x-2">
@@ -424,11 +457,11 @@ function solution() {
                     <LogIn className="w-4 h-4" />
                   </div>
                   <h2 className="text-lg font-bold font-['Outfit'] text-white">
-                    Join with Room ID
+                    Join Interview as Candidate
                   </h2>
                 </div>
                 <p className="text-xs text-slate-400">
-                  Enter an existing 6-character room code to join an interview session.
+                  Enter the 6-character room code provided by your interviewer.
                 </p>
               </div>
 
@@ -466,7 +499,7 @@ function solution() {
                     </>
                   ) : (
                     <>
-                      <span>Enter Workspace</span>
+                      <span>Enter Interview Room</span>
                       <ArrowRight className="w-4 h-4" />
                     </>
                   )}
@@ -480,6 +513,58 @@ function solution() {
                 </div>
                 <p>Rooms automatically expire 24 hours after creation.</p>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Visual Guide: How Live Interviews Work in DevSync */}
+        <div className="max-w-4xl mx-auto glass-card rounded-2xl border border-slate-800/80 p-6 space-y-4">
+          <div className="flex items-center space-x-2">
+            <Sparkles className="w-4 h-4 text-indigo-400" />
+            <h3 className="text-sm font-bold font-['Outfit'] text-white uppercase tracking-wider">
+              Where to find Interview Options inside a Room:
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs">
+            <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <div className="flex items-center space-x-2 text-indigo-300 font-semibold">
+                <span className="text-base">📹</span>
+                <span>Video & Audio Call</span>
+              </div>
+              <p className="text-slate-400 leading-relaxed">
+                Click the <strong className="text-white">"Video"</strong> button in the top right bar of the workspace to start 1-on-1 WebRTC video calling.
+              </p>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <div className="flex items-center space-x-2 text-purple-300 font-semibold">
+                <span className="text-base">🧪</span>
+                <span>Submit Solution</span>
+              </div>
+              <p className="text-slate-400 leading-relaxed">
+                Click <strong className="text-white">"Submit Solution"</strong> to run candidate code against public & hidden test suites.
+              </p>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <div className="flex items-center space-x-2 text-rose-300 font-semibold">
+                <span className="text-base">🛡️</span>
+                <span>Anti-Cheat Guard</span>
+              </div>
+              <p className="text-slate-400 leading-relaxed">
+                The <strong className="text-white">"Integrity"</strong> button alerts host when a burst copy-paste (&gt;50 chars in &lt;50ms) is detected.
+              </p>
+            </div>
+
+            <div className="p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <div className="flex items-center space-x-2 text-amber-300 font-semibold">
+                <span className="text-base">🏆</span>
+                <span>End & Rate Scorecard</span>
+              </div>
+              <p className="text-slate-400 leading-relaxed">
+                Host can click the golden <strong className="text-white">"End & Rate"</strong> button to grade candidates & download PDF report.
+              </p>
             </div>
           </div>
         </div>

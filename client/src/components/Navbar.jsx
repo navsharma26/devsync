@@ -89,6 +89,13 @@ const Navbar = () => {
             >
               Home
             </Link>
+            <a
+              href="/#interview-card"
+              className="px-3.5 py-2 rounded-lg text-sm font-medium text-indigo-300 hover:text-white hover:bg-indigo-600/20 transition-colors flex items-center space-x-1.5"
+            >
+              <Sparkles className="w-4 h-4 text-indigo-400" />
+              <span>Mock Interview</span>
+            </a>
             <Link
               to="/dashboard"
               className={`px-3.5 py-2 rounded-lg text-sm font-medium transition-colors flex items-center space-x-1.5 ${
@@ -97,7 +104,7 @@ const Navbar = () => {
                   : 'text-slate-300 hover:text-white hover:bg-slate-800/40'
               }`}
             >
-              <LayoutDashboard className="w-4 h-4 text-indigo-400" />
+              <LayoutDashboard className="w-4 h-4 text-slate-400" />
               <span>Dashboard</span>
             </Link>
           </div>
