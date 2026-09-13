@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-// In development, we allow fallback across common ports
 const API_BASE_URL =
   import.meta.env.VITE_API_URL ||
-  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
-    ? 'http://localhost:5002' // Fallback to dev port or configured port
-    : '');
+  (typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:5002'
+    : 'https://devsync-api-05jm.onrender.com');
 
 export const api = axios.create({
   baseURL: API_BASE_URL ? `${API_BASE_URL}/api` : '/api',
